@@ -167,6 +167,8 @@
             </div>
             <div class="col-6 text-center">
               <app-my-button
+                [btnClass]="'btn btn-success'"
+                onclick="($event)"
                 (onBtnClicked)="onSaveClient($event)"
                 [btnText]="
                   clientObj.clientId != 0 ? 'Update Client' : 'Save Client'

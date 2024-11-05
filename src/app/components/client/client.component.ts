@@ -60,6 +60,7 @@ export class ClientComponent implements OnInit {
   }
 
   onSaveClient(data: string) {
+    alert(data);
     this.clientService
       .addUpdate(this.clientObj)
       .subscribe((res: APIResponseModel) => {
