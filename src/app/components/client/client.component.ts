@@ -33,6 +33,7 @@ export class ClientComponent implements OnInit {
     this.userList$ = this.clientService.getAllUser();
   }
 
+  //add Commen for git
   // loadClient() {
   //   this.http
   //     .get<any>('https://localhost:7294/api/v1/EmployeeConroller')
