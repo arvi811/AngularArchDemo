@@ -1,0 +1,15 @@
+<!-- <div
+  [ngClass]="{
+    alert: true,
+    'alert-danger': dynamicClass,
+    'alert-success': !dynamicClass
+  }"
+></div> -->
+
+<div
+  [className]="
+    alertType == 'Success' ? 'alert alert-success' : 'alert alert-danger'
+  "
+>
+  <strong>{{ alertType }}</strong> Indicates a successful or positive action
+</div>
