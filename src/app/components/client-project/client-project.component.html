@@ -1,7 +1,13 @@
+<app-alert [alertType]="'Error'" [alertMessage]="'This is Error Message'" [dynamicClass]="true"></app-alert>
 <div class="row">
   <div class="col-8">
     <div class="card">
-      <div class="card-header bg-success">Client List</div>
+      <div class="card-header bg-success">
+        Client List - {{ firstName() }}
+        <button class="btn btn-danger" (click)="changeFname()">
+          Change F name
+        </button>
+      </div>
       <div class="card-body">
         <div class="row">
           <div class="col-12">
@@ -11,19 +17,19 @@
                   <th>Sr No</th>
                   <th>Company Name</th>
                   <th>Person Name</th>
-                  <th>Contact No</th>
+                  <th>Contact No</th> 
                   <th>City</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
-                @for (item of clientList; track $index) {
+                @for (item of projectList(); track $index) {
                 <tr>
-                  <td>{{ item.clientId }}</td>
-                  <td>{{ item.companyName }}</td>
-                  <td>{{ item.contactPersonName }}</td>
-                  <td>{{ item.contactNo }}</td>
-                  <td>{{ item.city }}</td>
+                  <td>{{ $index + 1 }}</td>
+                  <td>{{ item.clientName }}</td>
+                  <td>{{ item.projectName }}</td>
+                  <td>{{ item.empName }}</td>
+                  <td>{{ item.startDate | date:'dd-MMM-yyyy' }}</td>
                   <td>
                     <button class="btn btn-primary m-1">Edit</button>
                     <button class="btn btn-danger m-1">Delete</button>

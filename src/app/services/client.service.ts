@@ -22,6 +22,12 @@ export class ClientService {
     return this.http.get('https://jsonplaceholder.typicode.com/users');
   }
 
+  getAllClientProject(): Observable<APIResponseModel> {
+    return this.http.get<APIResponseModel>(
+      environment.API_URL + Constant.API_METHOD.GET_ALL_PROJECT
+    );
+  }
+
   getAllEmployee(): Observable<APIResponseModel> {
     return this.http.get<APIResponseModel>(
       environment.API_URL + Constant.API_METHOD.GET_ALL_EMP

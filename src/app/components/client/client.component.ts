@@ -7,11 +7,21 @@ import { HttpClient } from '@angular/common/http';
 import { AsyncPipe, DatePipe, JsonPipe, UpperCasePipe } from '@angular/common';
 import { observable, Observable } from 'rxjs';
 import { Constant } from '../../constant/Constant';
+import { AlertComponent } from '../../reusableComponent/alert/alert.component';
+import { MyButtonComponent } from '../../reusableComponent/my-button/my-button.component';
 
 @Component({
   selector: 'app-client',
   standalone: true,
-  imports: [FormsModule, UpperCasePipe, DatePipe, JsonPipe, AsyncPipe],
+  imports: [
+    FormsModule,
+    UpperCasePipe,
+    DatePipe,
+    JsonPipe,
+    AsyncPipe,
+    AlertComponent,
+    MyButtonComponent,
+  ],
   templateUrl: './client.component.html',
   styleUrl: './client.component.css',
 })
@@ -35,7 +45,7 @@ export class ClientComponent implements OnInit {
 
   //add Commen for git
   // loadClient() {
-  //   this.http
+  //   this.httpy
   //     .get<any>('https://localhost:7294/api/v1/EmployeeConroller')
   //     .subscribe((res: any) => {
   //       this.testList = res;
@@ -49,7 +59,7 @@ export class ClientComponent implements OnInit {
     });
   }
 
-  onSaveClient() {
+  onSaveClient(data: string) {
     this.clientService
       .addUpdate(this.clientObj)
       .subscribe((res: APIResponseModel) => {
